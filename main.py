@@ -1,10 +1,7 @@
+# data = pandas.dataframe with columns ['Volume', 'High', 'Low', 'Close'] Values
+from numpy import mean, absolute
 
-# data = pandas data frame
 data['Volume'] = data.Volume.round() * 68500
-# for i in data:
-#     print(i[-2])
-#     time.sleep(1)
-# exit()
 prevdayHigh =  data['High'].max()
 prevdayLow =  data['Low'].max()
 prevdayClose = data['Close'].max()
@@ -28,30 +25,11 @@ def calcRs(n=14):
 
 def rma(source,periods):
     alpha = periods
-    # (
-    #   (
-    #     int(
-    #         1/periods
-    #     )*source[0]) + (
-    #         int(
-    #             1 - (1/periods)
-    #         )*source[1]
-    #     )
-    # )
-    # return (((1/periods)*source[0]) +  ((1 - (1/periods))*source[1]))
-    # return (
-    #     ((
-    #        (sum(source))/periods
-    #     )*13) + source[0]
-    # ) /  14
-    # return ((
-    #     ((sum(source)/periods) - 1)*((alpha-1)) + source[0]
-    # )/alpha)  +source[0]
     return (
         sum(source)
     ) / periods
-def calcPivot(n=1):
-    return 
+    
+
 
 def calcEma(src,**kwargs):
     return src.ewm(**kwargs).mean()
@@ -69,14 +47,14 @@ def rsi(close, periods = 14):
 
 
 
-# print(rsi(data['Close'][::-1]))
-# print(rsi(data['Close'][::-1]).max())
+
 
 pivotPoint1 = calcPivot(0)
 pivotPoint2 = calcPivot(1)
 data['H/L'] = np.NAN
 data['max'] = 0
 data['min'] = 0
+
 def sort(data, clmn):
     return data.sort_values(by=[clmn], ascending=True)
     
@@ -107,22 +85,12 @@ def markMaximaMinima(data: pd.DataFrame):
                if m_<Me1_:
                    data.loc[index, "H/L"] = "L"
                    data.loc[index, "min"] = m_
-# exit()        
-# try:
-#     markMaximaMinima(data)
-#    macd
+
     print(calcEma(data['Close'][::-1], span=12, adjust=False) - calcEma(data['Close'][::-1], span=26, adjust=False))
-#  ##;
-# except:
-#     pass
-# stoc
-# print(
-#     ( data.iloc[[0]]['Close'].item() - data.loc[0:14]['min'].max()) / (data.loc[0:14]['max'].max() - data.loc[0:14]['min'].max())*100
-# )
-# print(data.to_string())
 
 d = data.loc[0:14]
 typicalPrice = (d.sum() + d.sum() + d.sum()) / 3
+
 def mad(x,):
  s=0
  k=0
@@ -136,9 +104,8 @@ def mad(x,):
       k+=1
     except Exception:
         break
-#  return s/k
  return x.sum()
-from numpy import mean, absolute
+    
 
 def mad(data, axis=None):
     return mean(absolute(data - mean(data, axis)), axis)
@@ -185,24 +152,12 @@ def vwma(df):
     tw= calcEma(df['cxv'],span=12, adjust=False) / calcEma(df['Volume'],span=12, adjust=False)
     ts = calcEma(df['cxv'], span=26, adjust=False) / calcEma(df['Volume'], span=26, adjust=False)
     return tw-ts
-    # if n == 11:
-    #     if(i) == (n):
-    #       return vwma(df,c,25)
-    #     return vwma(df,c, n, i+1)
-    # if(i) == (n):
-    #  return df
-    # return vwma(df,c,n,i+1)
+
 try:
-    
  markMaximaMinima(data)
 except:
     pass
-# data['cxv'] = data.Close*data.Volume
 obv(data)
-# data = vwma(data[::-1])
-# data['vwmacd'] = data['vwma12'] - data['vwma26']
-
-# data['rawMoneyFlow'] = data.tp*data.Volume
 
 def calcMFI(origdata: pd.DataFrame, ndata: pd.DataFrame=None, period=14,i=0,calcLower=False, upper=[], lower=[]):
     try:
