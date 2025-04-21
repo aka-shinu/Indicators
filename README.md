@@ -19,21 +19,24 @@ A lightweight Python library built with **Pandas** and **NumPy** to calculate po
 git clone https://github.com/aka-shinu/Indicators.git
 cd Indicators
 pip install -r requirements.txt
-Requirements: pandas, numpy
 ```
-🧮 Available Indicators
-RSI (Relative Strength Index)
 
-SMA (Simple Moving Average)
+> Requirements: `pandas`, `numpy`
 
-EMA (Exponential Moving Average)
+---
 
-(More indicators coming soon)
+## 🧮 Available Indicators
 
-🧑‍💻 Example Usage
-python
-Copy
-Edit
+- **RSI (Relative Strength Index)**
+- **SMA (Simple Moving Average)**
+- **EMA (Exponential Moving Average)**
+- *(More indicators coming soon)*
+
+---
+
+## 🧑‍💻 Example Usage
+
+```python
 import pandas as pd
 from indicators import rsi, sma, ema
 
@@ -50,34 +53,33 @@ sma_series = sma(prices, period=10)
 ema_series = ema(prices, period=10)
 
 print("RSI:", rsi_series)
-📁 Project Structure
-bash
-Copy
-Edit
-Indicators/
-├── indicators/
-│   ├── __init__.py
-│   ├── rsi.py
-│   ├── sma.py
-│   ├── ema.py
-│   └── utils.py
-├── tests/
-│   └── test_rsi.py
-├── requirements.txt
-└── README.md
-✅ TODO
- Add Bollinger Bands
+```
 
- Add MACD & ATR
+---
 
- Write full unit tests
 
- Add Jupyter Notebook demo
+## ✅ TODO
 
- Package for PyPI
+- [ ] Add Bollinger Bands
+- [ ] Add MACD & ATR
+- [ ] Write full unit tests
+- [ ] Add Jupyter Notebook demo
+- [ ] Package for PyPI
 
-🤝 Contributing
+---
+
+## 🤝 Contributing
+
 Found a bug? Want to add a new indicator? Open a PR or issue — contributions are always welcome!
 
-📜 License
-This project is licensed under the MIT License — see the LICENSE file for details.
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙌 Author
+
+Made with ❤️ by [aka-shinu](https://github.com/aka-shinu)
