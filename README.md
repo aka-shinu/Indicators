@@ -20,7 +20,7 @@ git clone https://github.com/aka-shinu/Indicators.git
 cd Indicators
 pip install -r requirements.txt
 Requirements: pandas, numpy
-
+```
 🧮 Available Indicators
 RSI (Relative Strength Index)
 
